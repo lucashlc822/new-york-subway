@@ -31,38 +31,65 @@ The gold layer provides a **business-level representation** of the data, consist
 
 ---
 
-## View #2: **gold.dim_products**
-- **Purpose:** This table stores all of the product information, including the category, cost, and product_line.
+## View #2: **gold.dim_station_entrances**
+- **Purpose:** This table stores all the information for the station entrances, including the entrance type, routes, and geographics.
 - **Columns:**
 
 | Column Name | Data Type | Description |
 | ------------|-----------|-------------|
-| product_key | INT | Surrogate key that identifies each product record in the table. |
-| produt_id | INT | Unique numerical identifier assigned to each product. |
-| product_number | NVARCHAR(50) | Alphanumeric identifier representing the product, used for tracking and referencing. |
-| product_name | NVARCHAR(50) | String representing the name of the product |
-| category_id | NVARCHAR(50) | String representing the identifier for each product category. |
-| category | NVARCHAR(50) | String representing the product category. |
-| subcategory | NVARCHAR(50) | String representing the product subcategory. |
-| maintenance | NVARCHAR(50) | String stating whether the product requires maintenance (e.g., Yes, No)
-| cost | INT | Cost of the product in whole currency units (e.g., 100). |
-| product_line | NVARCHAR(50) | String representing the product line (e.g., Road, Mountain).
-| start_date | DATE | The date when the product became available for sale or use (e.g., 2011-09-07). | |
+| station_key | INT | Foreign key referencing dim_stations; uniquely identifies the parent station. |
+| entrance_type | NVARCHAR(50) | Type of entrance (e.g., stair, ramp, elevator, easement). |
+| station_corner | NVARCHAR(10) | Cardinal intersection corner (e.g., Northwest, Southeast). |
+| north_south_street | NVARCHAR(100) | North-south street name where the entrance is located. |
+| east_west_street | NVARCHAR(100) |  North-south street name where the entrance is located. |
+| entrance_latitude | FLOAT | Latitude coordinate of the station entrance. |
+| entrance_longitude | FLOAT | Longitude coordinate of the station entrance. |
+| free_crossover | NVARCHAR(10) | True if free cross-platform/crossover is allowed; otherwise False. |
+| entry | NVARCHAR(10) | 	True if entry is allowed at this entrance; otherwise False. |
+| exit_only | NVARCHAR(10) | True if the entrance is exit-only; otherwise False. |
+| route_1 | NVARCHAR(10) | Subway route served at the entrance (e.g., A, 6, J); n/a if not applicable. |
+| route_2 | NVARCHAR(10) | Subway route served at the entrance (e.g., A, 6, J); n/a if not applicable. |
+| route_3 | NVARCHAR(10) | Subway route served at the entrance (e.g., A, 6, J); n/a if not applicable. |
+| route_4 | NVARCHAR(10) | Subway route served at the entrance (e.g., A, 6, J); n/a if not applicable. |
+| route_5 | NVARCHAR(10) | Subway route served at the entrance (e.g., A, 6, J); n/a if not applicable. |
+| route_6 | NVARCHAR(10) | Subway route served at the entrance (e.g., A, 6, J); n/a if not applicable. |
+| route_7 | NVARCHAR(10) | Subway route served at the entrance (e.g., A, 6, J); n/a if not applicable. |
+| route_8 | NVARCHAR(10) | Subway route served at the entrance (e.g., A, 6, J); n/a if not applicable. |
+| route_9 | NVARCHAR(10) | Subway route served at the entrance (e.g., A, 6, J); n/a if not applicable. |
+| route_10 | NVARCHAR(10) | Subway route served at the entrance (e.g., A, 6, J); n/a if not applicable. |
+| route_11 | NVARCHAR(10) | Subway route served at the entrance (e.g., A, 6, J); n/a if not applicable. |
+| staff_type | NVARCHAR(50) | Type of staffing (e.g., Full-time, Part-time, Spc Ev). |
+| staff_hours | NVARCHAR(100) | Staffing hours (e.g., "6 am - 10 pm", "Varies"). |
+| ada_compliant | NVARCHAR(10) | True if entrance is ADA-accessible; False if not. |
+| ada_notes | NVARCHAR(255) | Notes related to ADA accessibility (e.g., elevator location, limitations). |
 
 ---
 
-## View #3: **gold.fact_sales**
--  **Purpose:** This table stores all of the sales information, including the order date, sales amount, and prices.
+## View #3: **gold.dim_stop_times**
+-  **Purpose:** This table stores all of the information on subway stop times, including arrival time, departure time, and the associated route.
 -  **Columns:**
 
 | Column Name | Data Type | Description |
 | ------------|-----------|-------------|
-| order_number | NVARCHAR(50) | Alphanumeric identifier representing the order, used for tracking and referencing. |
-| product_key | INT | Key for navigating to the customer referenced from **gold.dim_customer**. |
-| customer_key | INT | Key for navigating to the product referenced from **gold.dim_products**.|
-| order_date | DATE | The date that the product was ordered. |
-| shipping_date | DATE | The date that the product was shipped. |
-| due_date | DATE | The date when the order payment is due (e.g., (1999-01-01). |
-| sales_amount | INT | The amount purchased from the sale, in whole currency units (e.g., 1000) |
-| quantity | INT | The quantity of the product that was purchased, in whole units (e.g., 3) |
-| price | INT | The price per unit of the product that was purchased, in whole currency units (e.g., 100). |
+| stop_key | INT | 	Surrogate key uniquely identifying each stop time record. |
+| stop_id | NVARCHAR(20)| Unique alphanumeric identifier of the stop. |
+| trip_id | NVARCHAR(50) | Unique alphanumeric identifier for a specific trip within a route and service. |
+| service_id | NVARCHAR(50) | Identifies the service schedule (e.g., weekday, weekend, holiday). |
+| serial_id | NVARCHAR(50) | Serial order or technical sequence identifier. |
+| shape_id | NVARCHAR(50) | Identifier that references the shape of the route path for mapping purposes. |
+| route_id | NVARCHAR(50) | Route identifier (e.g., "A", "7", "NQR"). |
+| route_name | NVARCHAR(100) | Descriptive name of the subway route. |
+| route_details | NVARCHAR(255) | Additional description of the route (e.g., stations, boroughs). |
+| route_type | NVARCHAR(20) | Type of route (e.g., Subway, Bus) displayed as a GTFS type code. |
+| trip_headsign | NVARCHAR(100) | Text displayed to passengers to identify the destination of the trip. |
+| direction_id | NVARCHAR(10) | Indicates travel direction: 0 (e.g., southbound) or 1 (northbound). |
+| arrival_time | TIME(0) | Time the train is scheduled to arrive at the stop. |
+| departure_time | TIME(0) | Time the train is scheduled to depart from the stop. |
+| stop_sequence | NVARHCAR(10) | Order of the stop within the trip (starts from 1 and increases sequentially). |
+| pickup_type | NVARCHAR(10) | Indicates if passengers can be picked up: 0 (regular), 1 (no pickup), etc. |
+| dropoff_type | NVARCHAR(10) | Indicates if passengers can be dropped off: 0 (regular), 1 (no drop-off), etc. |
+
+---
+
+
+
