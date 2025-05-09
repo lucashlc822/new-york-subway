@@ -66,7 +66,7 @@ The gold layer provides a **business-level representation** of the data, consist
 ---
 
 ## View #3: **gold.dim_stop_times**
--  **Purpose:** This table stores all of the information on subway stop times, including arrival time, departure time, and the associated route.
+-  **Purpose:** This table stores all of the information on subway stop times, including the arrival time, departure time, and the associated route.
 -  **Columns:**
 
 | Column Name | Data Type | Description |
@@ -92,7 +92,7 @@ The gold layer provides a **business-level representation** of the data, consist
 ---
 
 ## View #4: **gold.dim_trips**
--  **Purpose:** This table stores all of the information on subway stop times, including arrival time, departure time, and the associated route.
+-  **Purpose:** This table stores all of the information on subway trips, including the associated route details.
 -  **Columns:**
 
 | Column Name | Data Type | Description |
@@ -108,5 +108,23 @@ The gold layer provides a **business-level representation** of the data, consist
 | trip_headsign | NVARCHAR(100) | Text displayed to passengers to identify the trip's destination. |
 | direction_id | NVARCHAR(10) | Indicates travel direction: 0 (e.g., southbound) or 1 (northbound). |
 
+---
+
+## View #5: **gold.fact_subway_ridership**
+-  **Purpose:** This table holds records of subway ridership data in New York from 2013 to 2018.
+-  **Columns:**
+
+| Column Name | Data Type | Description |
+| ------------|-----------|-------------|
+| station_key | INT | NVARCHAR(50) | 	Foreign key referencing dim_stations; uniquely identifies the station. |
+| ridership_2013 | INT | Total subway ridership count for the station in 2013. |
+| ridership_2014 | INT | Total subway ridership count for the station in 2014. |
+| ridership_2015 | INT | Total subway ridership count for the station in 2015. |
+| ridership_2016 | INT | Total subway ridership count for the station in 2014. |
+| ridership_2017 | INT | Total subway ridership count for the station in 2017. |
+| ridership_2018 | INT | Total subway ridership count for the station in 2018. |
+| change_2018 | INT | Change in ridership from 2017 to 2018. |
+| percentage_change_2018 | FLOAT | Percentage change in ridership from 2017 to 2018. |
+| rank_ridership_2018 | INT | Station’s ridership rank across all stations for the year 2018. |
 
 
