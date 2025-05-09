@@ -1,4 +1,4 @@
-# Data Catalog for the Gold Layer
+# 📘 Data Catalog for the Gold Layer
 
 ## Overview
 The gold layer provides a **business-level representation** of the data, consisting of three **dimension** tables and one **fact** table.
