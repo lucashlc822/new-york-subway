@@ -81,7 +81,7 @@ The gold layer provides a **business-level representation** of the data, consist
 | route_name | NVARCHAR(100) | Descriptive name of the subway route. |
 | route_details | NVARCHAR(255) | Additional description of the route (e.g., stations, boroughs). |
 | route_type | NVARCHAR(20) | Type of route (e.g., Subway, Bus) displayed as a GTFS type code. |
-| trip_headsign | NVARCHAR(100) | Text displayed to passengers to identify the destination of the trip. |
+| trip_headsign | NVARCHAR(100) | Text displayed to passengers to identify the trip's destination. |
 | direction_id | NVARCHAR(10) | Indicates travel direction: 0 (e.g., southbound) or 1 (northbound). |
 | arrival_time | TIME(0) | Time the train is scheduled to arrive at the stop. |
 | departure_time | TIME(0) | Time the train is scheduled to depart from the stop. |
@@ -95,6 +95,18 @@ The gold layer provides a **business-level representation** of the data, consist
 -  **Purpose:** This table stores all of the information on subway stop times, including arrival time, departure time, and the associated route.
 -  **Columns:**
 
+| Column Name | Data Type | Description |
+| ------------|-----------|-------------|
+| trip_id | NVARCHAR(50) | NVARCHAR(50) | Unique alphanumeric identifier for a specific trip within a route and service. |
+| service_id | NVARCHAR(50) | Identifies the service schedule (e.g., weekday, weekend, holiday). |
+| serial_id | NVARCHAR(50) | Serial order or technical sequence identifier. |
+| shape_id | NVARCHAR(50) | Identifier that references the shape of the route path for mapping purposes. |
+| route_id | NVARCHAR(50) | Route identifier (e.g., "A", "7", "NQR"). |
+| route_name | NVARCHAR(100) | Descriptive name of the subway route. |
+| route_details | NVARCHAR(255) | Additional description of the route (e.g., stations, boroughs). |
+| route_type | NVARCHAR(20) | Type of route (e.g., Subway, Bus) displayed as a GTFS type code. |
+| trip_headsign | NVARCHAR(100) | Text displayed to passengers to identify the trip's destination. |
+| direction_id | NVARCHAR(10) | Indicates travel direction: 0 (e.g., southbound) or 1 (northbound). |
 
 
 
