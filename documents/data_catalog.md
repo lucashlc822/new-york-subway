@@ -91,5 +91,10 @@ The gold layer provides a **business-level representation** of the data, consist
 
 ---
 
+## View #4: **gold.dim_trips**
+-  **Purpose:** This table stores all of the information on subway stop times, including arrival time, departure time, and the associated route.
+-  **Columns:**
+
+
 
 
