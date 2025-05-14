@@ -71,6 +71,35 @@ The diagram above shows all the relationships discovered between the data tables
 - **[GitHub](https://github.com/):** Storage for all files, queries, and related project documents.
 - **[Draw.io](https://www.drawio.com/):** Designing data architecture, flow/integration diagrams, and other visuals.
 - **[Notion Page](https://www.notion.com/):** Project Planning and Management Tool. Click **[here](https://www.notion.so/New-York-Subway-Data-Warehouse-1d547ae651ed80b1a855eca1e936898c?pvs=4)** to access the Project Plan.
+ 
+---
+
+## Repository Structure
+```
+data-warehouse-project/
+│
+├── dataset/                           # Raw dataset used for the project (new_york_subway data from BigQuery)
+│
+├── documents/                          # Project documentation and architecture details
+│   ├── data_architecture.png           # PNG file displaying the project architecture
+│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
+│   ├── data_flow_diagram.png           # PNG file for the data flow diagram
+│   ├── data_integration.png            # PNG file for the data integration diagram
+│   ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files
+│
+├── scripts/                            # SQL scripts for ETL and transformations
+│   ├── bronze/                         # Scripts for extracting and loading raw data
+│   ├── silver/                         # Scripts for cleaning and transforming data
+│   ├── gold/                           # Scripts for creating analytical models
+│
+├── tests/                              # Test scripts and quality files
+│
+├── README.md                           # Project overview and instructions
+└── LICENSE                             # License information for the repository
+```
+
+---
+
 
 
   
