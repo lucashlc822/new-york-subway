@@ -7,6 +7,18 @@ A modern data warehouse with SQL Server, including ETL processes, data modelling
 
 ## Table of Contents
 
+1. [Project Overview](#project-overview)
+2. [Project Requirements](#project-requirements)
+   - [Objective](#objective)
+   - [Specfications](#specifications)
+3. [Data Architecture](#data-architecture)
+4. [Data Flow](#data-flow)
+5. [Data Integration](#data-integration)
+6. [Important Links and Tools](#important-links-and-tools)
+7. [Repository Structure](#repository-structure)
+8. [License](#license)
+9. [About Me](#about-me)
+
 ---
 
 ## Project Overview
