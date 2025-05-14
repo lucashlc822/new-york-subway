@@ -61,4 +61,16 @@ The diagram above shows the path the data takes moving from the source folder to
 ![Data Integration](documents/data_integration.png)
 The diagram above shows all the relationships discovered between the data tables. The data can be split up into 3 different groups (station, trip, and ridership).
 
+--- 
+
+## Important Links and Tools
+
+- **[Dataset](/dataset/):** Access to the project files (CSV format).
+- **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Server to host the SQL database.
+- **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** GUI used for managing and interacting with the database.
+- **[GitHub](https://github.com/):** Storage for all files, queries, and related project documents.
+- **[Draw.io](https://www.drawio.com/):** Designing data architecture, flow/integration diagrams, and other visuals.
+- **[Notion Page](https://www.notion.com/):** Project Planning and Management Tool. Click **[here](https://www.notion.so/New-York-Subway-Data-Warehouse-1d547ae651ed80b1a855eca1e936898c?pvs=4)** to access the Project Plan.
+
+
   
