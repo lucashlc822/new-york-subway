@@ -35,13 +35,13 @@ A modern data warehouse with SQL Server, including ETL processes, data modelling
 Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
 
 ### Specifications
-- **Data Sources:** - Import data from the new_yorK_subway dataset on **BigQuery**, provided as CSV files.
-- **Data Quality:** - Cleanse and resolve data quality issues prior to analysis.
-- **Integration:** - Combine the data files to create a user-friendly data model for analytical queries.
-- **Scope:** - Focus on the latest dataset only, historization of data is not required.
-- **Documentation:** - Provide clear data model documentation to support both business stakeholders and analysis teams.
+- **Data Sources:** Import data from the new_yorK_subway dataset on **BigQuery**, provided as CSV files.
+- **Data Quality:** Cleanse and resolve data quality issues prior to analysis.
+- **Integration:** Combine the data files to create a user-friendly data model for analytical queries.
+- **Scope:** Focus on the latest dataset only, historization of data is not required.
+- **Documentation:** Provide clear data model documentation to support both business stakeholders and analysis teams.
 
-  ---
+---
 
 ## Data Architecture
 The data architecture for this project follows the **Medallion Architecture** (Multi-hop Architecture), which consists of the **bronze**, **silver**, and **gold** layers. This type of structure involves making incremental improvements to the data quality as it flows through each layer of the architecture. The setup for this project is shown below:
